@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>fresh-mall-common</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>fresh-mall-common</name>
+    <description>fresh-mall-common</description>
+    <!-- 1. 父工程必须指向 fresh-mall -->
+    <parent>
+        <groupId>com.freshmall</groupId>
+        <artifactId>fresh-mall</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- ========================================================== -->
+        <!--   核心工具类 (版本号均由 dependencies 模块统一管理，此处不写)   -->
+        <!-- ========================================================== -->
+
+        <!-- Lombok: 简化 JavaBean 代码 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- Hutool: Java通用工具包 (StrUtil, DateUtil, BeanUtil等) -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
+        <!-- ========================================================== -->
+        <!--   基础通用依赖                                               -->
+        <!-- ========================================================== -->
+
+        <!-- Jackson Annotations: 用于统一响应对象的 JSON 格式化 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+
+        <!-- MyBatis Plus Annotation: 仅引入注解，方便在Common中定义 BaseEntity -->
+        <!-- 注意：这里不引 starter，只引 annotation，保持 common 纯净 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-annotation</artifactId>
+        </dependency>
+
+        <!-- Servlet API: 有些工具类可能需要用到 Request/Response 对象 -->
+        <!-- scope 为 provided，表示只在编译时需要，运行时由 Web 容器提供 -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Spring Context: 主要是为了使用 @Component, @Configuration 等基础注解 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>
