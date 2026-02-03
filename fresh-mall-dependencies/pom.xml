@@ -68,12 +68,6 @@
                 <version>${hutool.version}</version>
             </dependency>
 
-            <!-- 本项目模块版本管理 -->
-            <dependency>
-                <groupId>com.freshmall</groupId>
-                <artifactId>fresh-mall-common</artifactId>
-                <version>${project.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

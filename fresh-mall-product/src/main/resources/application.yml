@@ -1,0 +1,30 @@
+server:
+  port: 8081  # 商品服务端口
+
+spring:
+  application:
+    name: fresh-mall-product # 微服务名称 (Nacos里显示这个)
+  
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/fresh_mall_product?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root        # 数据库账号
+    password: root        # 数据库密码
+  
+  # Nacos 配置 (确保你也启动了Nacos)
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+# MyBatis Plus 配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true # 开启下划线转驼峰
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 开发环境开启SQL日志打印
+  global-config:
+    db-config:
+      logic-delete-field: deleted # 对应 BaseEntity 的 deleted 字段
+      logic-delete-value: 1
+      logic-not-delete-value: 0

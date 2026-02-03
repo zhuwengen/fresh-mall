@@ -20,6 +20,13 @@
             <version>${project.version}</version>
         </dependency>
 
+        <!-- Lombok: 简化 JavaBean 代码 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- Spring Boot Web (Tomcat & Spring MVC) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

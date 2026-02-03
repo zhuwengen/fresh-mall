@@ -1,13 +1,13 @@
-package com.freshmall.freshmallproduct;
+package com.freshmall.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FreshMallProductApplication {
+public class FreshMallGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FreshMallProductApplication.class, args);
+        SpringApplication.run(FreshMallGatewayApplication.class, args);
     }
 
 }
